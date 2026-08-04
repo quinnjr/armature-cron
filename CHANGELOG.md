@@ -9,6 +9,10 @@ Earlier changes are recorded in the workspace [`CHANGELOG.md`](../CHANGELOG.md).
 
 ## [Unreleased]
 
+### Added
+
+- Added the `cron` criterion benchmark (expression and preset parsing), split out of the root package's `benches/data_benchmarks.rs`. Run it with `cargo bench -p armature-cron --bench cron`. The crate now sets `autobenches = false`, so a new file under `benches/` needs an explicit `[[bench]]` entry.
+
 ### Fixed
 
 - `next_run` advances at dispatch rather than completion. With `prevent_overlap` disabled a running job kept its past due time and was re-dispatched every tick — a daily five-minute job fired roughly 300 times, and the cron expression stopped governing firing entirely.
