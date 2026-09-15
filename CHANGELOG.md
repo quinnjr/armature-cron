@@ -9,13 +9,12 @@ Earlier changes are recorded in the workspace [`CHANGELOG.md`](../CHANGELOG.md).
 
 ## [Unreleased]
 
-### Added
+## [0.5.0] - 2026-09-15
 
-- Added the `cron` criterion benchmark (expression and preset parsing), split out of the root package's `benches/data_benchmarks.rs`. Run it with `cargo bench -p armature-cron --bench cron`. The crate now sets `autobenches = false`, so a new file under `benches/` needs an explicit `[[bench]]` entry.
+### Changed
 
-### Fixed
-
-- `next_run` advances at dispatch rather than completion. With `prevent_overlap` disabled a running job kept its past due time and was re-dispatched every tick — a daily five-minute job fired roughly 300 times, and the cron expression stopped governing firing entirely.
+- **Breaking:** requires `armature-core` 0.10 (was `0.9`); its types appear in this crate's API, so the requirement change is breaking here and the minor moves. Part of the `armature-core` 0.10 release train.
+- Dependencies bumped to their latest releases: `tokio` 1.52 → 1.53, `tokio` 1.52 → 1.53.
 
 ## [0.4.0] - 2026-08-05
 
