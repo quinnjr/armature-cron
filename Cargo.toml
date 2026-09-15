@@ -19,7 +19,7 @@ armature-log = { version = "0.2" }
 # Core dependencies
 async-trait = "0.1"
 thiserror = "2.0"
-tokio = { version = "1.52", features = ["rt", "rt-multi-thread", "macros", "sync", "time"] }
+tokio = { version = "1.53", features = ["rt", "rt-multi-thread", "macros", "sync", "time"] }
 chrono = "0.4"
 cron = "0.17"
 
@@ -29,7 +29,7 @@ armature-core = { version = "0.9" }
 [dev-dependencies]
 criterion = { version = "0.8", features = ["html_reports"] }
 cargo-husky = { version = "1.5", default-features = false, features = ["user-hooks"] }
-tokio = { version = "1.52", features = ["rt-multi-thread", "macros", "sync", "time", "net", "io-util", "fs", "test-util"] }
+tokio = { version = "1.53", features = ["rt-multi-thread", "macros", "sync", "time", "net", "io-util", "fs", "test-util"] }
 
 # Explicit bench targets only: a stray file under benches/ should not silently
 # become a target.
